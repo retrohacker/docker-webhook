@@ -20,10 +20,10 @@ Parse the url to check against an AUTH_TOKEN:
 
 ```
 var webhook = require('docker-webhook')
-var url = require('url')
+var URL = require('url')
 
 webhook(function cb(json, url) {
-  var url_auth_token = url.parse(url).path.substr(1)
+  var url_auth_token = URL.parse(url).path.substr(1)
   if( url_auth_token === process.env.AUTH_TOKEN ){
     // authorized to run hook commands
     cosole.log(JSON.stringify(json,null," "))
