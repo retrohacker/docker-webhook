@@ -18,7 +18,7 @@ var m = module.exports = function init(cb) {
       } catch(e) {return null}
       if(body.callback_url)
         callback(body.callback_url)
-      cb(body)
+      cb(body, req.url)
     })
   })
   server.on('close', function() {

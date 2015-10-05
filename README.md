@@ -16,4 +16,21 @@ webhook(function cb(json) {
 })
 ```
 
+Parse the url to check against an AUTH_TOKEN:
+
+```
+var webhook = require('docker-webhook')
+var URL = require('url')
+
+webhook(function cb(json, url) {
+  var url_auth_token = URL.parse(url).path.substr(1)
+  if( url_auth_token === process.env.AUTH_TOKEN ){
+    // authorized to run hook commands
+    cosole.log(JSON.stringify(json,null," "))
+  }else{
+    // unauthorized, do nothing
+  }
+})
+```
+
 Default port is `8411`, and can be changed by setting the `DOCKER_WEBHOOK_PORT` environment variable.
