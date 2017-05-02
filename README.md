@@ -1,6 +1,8 @@
 docker-webhook
 ===
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/retrohacker/docker-webhook.svg)](https://greenkeeper.io/)
+
 [![NPM](https://nodei.co/npm/docker-webhook.png)](https://nodei.co/npm/docker-webhook/)
 
 A simple node.js library for responding to pushes to the docker registry.
